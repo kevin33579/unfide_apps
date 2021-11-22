@@ -8,11 +8,13 @@ class MainMenu extends StatefulWidget {
 }
 
 class _MainMenuState extends State<MainMenu> {
-  String text = 'Press the button and start speaking';
-  bool isListening = false;
+  CollectionReference notesCollection =
+  FirebaseFirestore.instance.collection("notes");
   int _selectedIndex = 0;
 
   static List<Widget> _widgetOptions = <Widget>[
+    MainMenu(),
+    contactPsikolog(),
     MyAccount(),
   ];
 
@@ -22,15 +24,15 @@ class _MainMenuState extends State<MainMenu> {
     });
   }
 
-  @override
-  void initState() {
-    super.initState();
+  Widget buildBody() {
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+      appBar: AppBar(
+        title: Text("List data"),
+        centerTitle: true,
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
@@ -51,6 +53,8 @@ class _MainMenuState extends State<MainMenu> {
         onTap: _onItemTapped,
         elevation: 0,
       ),
+      resizeToAvoidBottomInset: false,
+      body: buildBody(),
     );
   }
 }

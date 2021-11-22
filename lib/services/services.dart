@@ -13,4 +13,4 @@ import 'package:unfide_apps/models/models.dart';
 
 part 'auth_services.dart';
 part 'activity_services.dart';
-part 'notes_services.dart';
+part 'data_services.dart';

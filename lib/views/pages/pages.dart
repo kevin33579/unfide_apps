@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
@@ -9,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:unfide_apps/models/models.dart';
 import 'package:unfide_apps/services/services.dart';
+import 'package:unfide_apps/views/widgets/widgets.dart';
 
 import '../../utils.dart';
 
@@ -20,3 +22,5 @@ part 'myAccount.dart';
 part 'uploadStory.dart';
 part 'payment.dart';
 part 'contactPsikolog.dart';
+part 'jenisCerita.dart';
+part 'listCerita.dart';
