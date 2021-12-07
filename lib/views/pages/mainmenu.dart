@@ -9,11 +9,11 @@ class MainMenu extends StatefulWidget {
 
 class _MainMenuState extends State<MainMenu> {
   CollectionReference notesCollection =
-  FirebaseFirestore.instance.collection("notes");
+      FirebaseFirestore.instance.collection("notes");
   int _selectedIndex = 0;
 
   static List<Widget> _widgetOptions = <Widget>[
-    MainMenu(),
+    JenisCerita(),
     contactPsikolog(),
     MyAccount(),
   ];
@@ -24,37 +24,30 @@ class _MainMenuState extends State<MainMenu> {
     });
   }
 
-  Widget buildBody() {
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("List data"),
-        centerTitle: true,
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.record_voice_over_sharp),
-            label: "Record",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.list),
-            label: "List Data",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: "My Account",
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped,
-        elevation: 0,
-      ),
-      resizeToAvoidBottomInset: false,
-      body: buildBody(),
-    );
+        body: Center(
+          child: _widgetOptions.elementAt(_selectedIndex),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+          items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.android),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.add_comment),
+              label: "chat Psikolog",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: "My Account",
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTapped,
+          elevation: 0,
+        ));
   }
 }

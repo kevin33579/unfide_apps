@@ -2,6 +2,7 @@ import 'dart:async';
 import 'dart:io';
 
 
+import 'package:avatar_glow/avatar_glow.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,3 +25,4 @@ part 'payment.dart';
 part 'contactPsikolog.dart';
 part 'jenisCerita.dart';
 part 'listCerita.dart';
+part 'tambahCerita.dart';

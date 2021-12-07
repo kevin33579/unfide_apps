@@ -9,6 +9,23 @@ class contactPsikolog extends StatefulWidget {
 class _contactPsikologState extends State<contactPsikolog> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("SESI KONSULTASI"),
+      ),
+      body:Container(
+
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: AvatarGlow(
+
+        endRadius: 75,
+        glowColor: Theme.of(context).primaryColor,
+        child: FloatingActionButton(
+          child: Icon(Icons.mic_none, size: 36),
+          onPressed:(){},
+        ),
+      ),
+    );
   }
 }
