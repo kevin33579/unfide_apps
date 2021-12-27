@@ -52,7 +52,7 @@ class _RegisterState extends State<Register> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             validator: (value) {
-                              if (value.isEmpty) {
+                              if (value!.isEmpty) {
                                 return "Please fill the field!!";
                               } else {
                                 return null;
@@ -73,7 +73,7 @@ class _RegisterState extends State<Register> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             validator: (value) {
-                              if (value.isEmpty) {
+                              if (value!.isEmpty) {
                                 return "Please fill the field!!";
                               } else {
                                 if (value.length < 7 || value.length > 14) {
@@ -98,7 +98,7 @@ class _RegisterState extends State<Register> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             validator: (value) {
-                              if (value.isEmpty) {
+                              if (value!.isEmpty) {
                                 return "Please enter your email!";
                               } else {
                                 if (!EmailValidator.validate(value)) {
@@ -134,7 +134,7 @@ class _RegisterState extends State<Register> {
                             autovalidateMode:
                                 AutovalidateMode.onUserInteraction,
                             validator: (value) {
-                              return value.length < 6
+                              return value!.length < 6
                                   ? "password must have at least 6 characters!"
                                   : null;
                             },
@@ -142,7 +142,7 @@ class _RegisterState extends State<Register> {
                           SizedBox(height: 24),
                           ElevatedButton.icon(
                             onPressed: () async {
-                              if (_formKey.currentState.validate()) {
+                              if (_formKey.currentState!.validate()) {
                                 setState(() {
                                   isLoading = true;
                                 });

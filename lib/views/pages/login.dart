@@ -26,6 +26,14 @@ class _LoginState extends State<Login> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
+        decoration: BoxDecoration(
+            color: Color(0xfffff4f4),
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.png"),
+            alignment: Alignment.bottomRight,
+          )
+        ),
+
         padding: EdgeInsets.all(24),
         child: Stack(
           children: [
@@ -37,7 +45,7 @@ class _LoginState extends State<Login> {
                       children: [
                         SizedBox(height: 24),
                         Image.asset(
-                          "assets/images/logo.png",
+                          "assets/images/fix_logo.png",
                           height: 200,
                         ),
                         SizedBox(height: 40),
@@ -51,7 +59,7 @@ class _LoginState extends State<Login> {
                           ),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
-                            if (value.isEmpty) {
+                            if (value!.isEmpty) {
                               return "Please enter your email!";
                             } else {
                               if (!EmailValidator.validate(value)) {
@@ -85,7 +93,7 @@ class _LoginState extends State<Login> {
                           ),
                           autovalidateMode: AutovalidateMode.onUserInteraction,
                           validator: (value) {
-                            return value.length < 6
+                            return value!.length < 6
                                 ? "password must have at least 6 characters!"
                                 : null;
                           },
@@ -93,7 +101,7 @@ class _LoginState extends State<Login> {
                         SizedBox(height: 24),
                         ElevatedButton.icon(
                           onPressed: () async {
-                            if (_formKey.currentState.validate()) {
+                            if (_formKey.currentState!.validate()) {
                               setState(() {
                                 isLoading = true;
                               });

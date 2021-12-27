@@ -24,7 +24,7 @@ class _SplashState extends State<Splash> {
     if (auth.currentUser != null) {
       Navigator.pushReplacementNamed(context, MainMenu.routeName);
       ActivityServices.showToast(
-          "Welcome back " + auth.currentUser.email, Colors.cyan);
+          "Welcome back ", Colors.cyan);
     } else {
       Navigator.pushReplacementNamed(context, Login.routeName);
     }
@@ -32,10 +32,8 @@ class _SplashState extends State<Splash> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Container(
-      alignment: Alignment.center,
-      child: Text("SPLASH SCREEN"),
-    ));
+    return Container(
+        color: Color(0xfffff4f4),
+        child: Image.asset("assets/images/fix_logo.png", height: 200));
   }
 }

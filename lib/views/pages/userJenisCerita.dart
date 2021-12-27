@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
 class JenisCerita extends StatefulWidget {
-  const JenisCerita({Key key}) : super(key: key);
+  const JenisCerita({Key? key}) : super(key: key);
 
   @override
   _JenisCeritaState createState() => _JenisCeritaState();
@@ -13,6 +13,7 @@ class _JenisCeritaState extends State<JenisCerita> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xffd09484),
         title: Text("U N F I D E"),
       ),
         body: ListView(children: [
@@ -30,7 +31,7 @@ class _JenisCeritaState extends State<JenisCerita> {
                 child: Text('Pilih'),
                 onPressed: () {
                   Navigator.pushReplacementNamed(
-                      context, TambahCerita.routeName);
+                      context, ListCeritaPendidikan.routeName);
                 },
               ),
             ]),
@@ -49,7 +50,7 @@ class _JenisCeritaState extends State<JenisCerita> {
                 child: Text('Pilih'),
                 onPressed: () {
                   Navigator.pushReplacementNamed(
-                      context, TambahCerita.routeName);
+                      context, ListCeritaCintaDanLogika.routeName);
                 },
               ),
             ]),
@@ -68,7 +69,7 @@ class _JenisCeritaState extends State<JenisCerita> {
                 child: Text('Pilih'),
                 onPressed: () {
                   Navigator.pushReplacementNamed(
-                      context, TambahCerita.routeName);
+                      context, ListCeritaKesehatan.routeName);
                 },
               ),
             ]),
@@ -76,18 +77,18 @@ class _JenisCeritaState extends State<JenisCerita> {
           Card(
             child: Column(mainAxisSize: MainAxisSize.max, children: <Widget>[
               Text(
-                'Pendidikan',
+                'Horor',
                 style: TextStyle(fontSize: 30),
               ),
               Text(
-                'berbagi cerita tentang pendidikan',
+                'berbagi cerita tentang Horor',
                 style: TextStyle(fontSize: 20),
               ),
               TextButton(
                 child: Text('Pilih'),
                 onPressed: () {
                   Navigator.pushReplacementNamed(
-                      context, TambahCerita.routeName);
+                      context, ListCeritaHoror.routeName);
                 },
               ),
             ]),

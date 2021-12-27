@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -50,6 +50,14 @@ dev_dependencies:
 
 # The following section is specific to Flutter.
 flutter:
+  assets:
+    - assets/icons/clock_icon.png
+    - assets/icons/home.png
+    - assets/icons/j.png
+    - assets/icons/konsul.png
+    - assets/icons/setting.png
+    - assets/images/background.png
+    - assets/images/fix_logo.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

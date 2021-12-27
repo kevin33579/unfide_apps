@@ -3,7 +3,7 @@ part of 'widgets.dart';
 class listCard extends StatefulWidget {
   final Datas datas;
 
-  listCard({this.datas});
+  listCard({required this.datas});
 
   @override
   _listCardState createState() => _listCardState();

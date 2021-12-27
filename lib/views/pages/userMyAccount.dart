@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
 class MyAccount extends StatefulWidget {
-  const MyAccount({Key key}) : super(key: key);
+  const MyAccount({Key? key}) : super(key: key);
 
   @override
   _MyAccountState createState() => _MyAccountState();

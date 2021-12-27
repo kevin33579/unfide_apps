@@ -34,6 +34,14 @@ class MyApp extends StatelessWidget {
         Login.routeName: (context) => Login(),
         MainMenu.routeName: (context) => MainMenu(),
         Register.routeName: (context) => Register(),
+        ListCeritaPendidikan.routeName: (context) => ListCeritaPendidikan(),
+        ListCeritaHoror.routeName: (context) => ListCeritaHoror(),
+        ListCeritaCintaDanLogika.routeName: (context) => ListCeritaCintaDanLogika(),
+        ListCeritaKesehatan.routeName: (context) => ListCeritaKesehatan(),
+        TambahCeritaPendidikan.routeName: (context) => TambahCeritaPendidikan(),
+        TambahCeritaHoror.routeName: (context) => TambahCeritaHoror(),
+        TambahCeritaCintaDanLogika.routeName: (context) => TambahCeritaCintaDanLogika(),
+        TambahCeritaKesehatan.routeName: (context) => TambahCeritaKesehatan(),
       },
     );
   }

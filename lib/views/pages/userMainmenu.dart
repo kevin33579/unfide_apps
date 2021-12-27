@@ -33,16 +33,22 @@ class _MainMenuState extends State<MainMenu> {
         bottomNavigationBar: BottomNavigationBar(
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              icon: Icon(Icons.android),
-              label: "Home",
+              icon: ImageIcon(
+                AssetImage('assets/icons/home.png'),
+              ),
+              label: 'home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.add_comment),
-              label: "chat Psikolog",
+              icon: ImageIcon(
+                AssetImage('assets/icons/konsul.png'),
+              ),
+              label: 'konsultasi',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: "My Account",
+              icon: ImageIcon(
+                AssetImage('assets/icons/setting.png'),
+              ),
+              label: 'setting',
             ),
           ],
           currentIndex: _selectedIndex,

@@ -4,7 +4,7 @@ class AuthServices {
   static FirebaseAuth auth = FirebaseAuth.instance;
   static CollectionReference userCollection =
       FirebaseFirestore.instance.collection("users");
-  static DocumentReference userDoc;
+  static DocumentReference? userDoc;
 
   static Future<String> SignUp(Users users) async {
     await Firebase.initializeApp();
@@ -15,9 +15,9 @@ class AuthServices {
 
     UserCredential userCredential = await auth.createUserWithEmailAndPassword(
         email: users.email, password: users.password);
-    uid = userCredential.user.uid;
+    uid = userCredential.user!.uid;
     //token = await userCredential.user.getIdToken();
-    token = await FirebaseMessaging.instance.getToken();
+    token = (await FirebaseMessaging.instance.getToken())!;
 
     await userCollection.doc(uid).set({
       "uid": uid,
@@ -49,8 +49,8 @@ class AuthServices {
 
     UserCredential userCredential =
         await auth.signInWithEmailAndPassword(email: email, password: password);
-    uid = userCredential.user.uid;
-    token = await FirebaseMessaging.instance.getToken();
+    uid = userCredential.user!.uid;
+    token = (await FirebaseMessaging.instance.getToken())!;
 
     await userCollection.doc(uid).set({
       "isOn": "1",
@@ -68,7 +68,7 @@ class AuthServices {
   static Future<bool> SignOut() async {
     await Firebase.initializeApp();
     String dateNow = ActivityServices.dateNow();
-    String uid = auth.currentUser.uid;
+    String uid = auth.currentUser!.uid;
 
     await auth.signOut().whenComplete(() {
       userCollection.doc(uid).update({
