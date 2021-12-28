@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'dart:io';
 
-
 import 'package:avatar_glow/avatar_glow.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:email_validator/email_validator.dart';
@@ -32,3 +31,7 @@ part 'userTambahCeritaPendidikan.dart';
 part 'userTambahCeritaCintaDanLogika.dart';
 part 'userTambahCeritaKesehatan.dart';
 part 'userTambahCeritaHoror.dart';
+part 'userProfileSettings.dart';
+part 'userPanduanPenggunaan.dart';
+part 'userSyaratDanKetentuan.dart';
+part 'userPusatBantuan.dart';
