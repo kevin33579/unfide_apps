@@ -14,7 +14,7 @@ class _MyAccountState extends State<MyAccount> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("My Account"),
+          title: Text("P R O F I L E"),
         ),
         body: Stack(children: [
           Container(
