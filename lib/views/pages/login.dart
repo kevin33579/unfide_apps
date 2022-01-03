@@ -28,12 +28,10 @@ class _LoginState extends State<Login> {
         height: double.infinity,
         decoration: BoxDecoration(
             color: Color(0xfffff4f4),
-          image: DecorationImage(
-            image: AssetImage("assets/images/background.png"),
-            alignment: Alignment.bottomRight,
-          )
-        ),
-
+            image: DecorationImage(
+              image: AssetImage("assets/images/background.png"),
+              alignment: Alignment.bottomRight,
+            )),
         padding: EdgeInsets.all(24),
         child: Stack(
           children: [

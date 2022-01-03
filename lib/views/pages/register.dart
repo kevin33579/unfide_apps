@@ -39,7 +39,7 @@ class _RegisterState extends State<Register> {
                       child: Column(
                         children: [
                           SizedBox(height: 24),
-                          Image.asset("name"),
+                          Image.asset("assets/images/fix_logo.png"),
                           SizedBox(height: 40),
                           TextFormField(
                             controller: ctrlName,
@@ -153,7 +153,8 @@ class _RegisterState extends State<Register> {
                                     ctrlEmail.text,
                                     ctrlPassword.text,
                                     "",
-                                    "");
+                                    "",
+                                    "psikolog");
                                 await AuthServices.SignUp(users).then((value) {
                                   if (value == "success") {
                                     setState(() {

@@ -5,6 +5,7 @@ class AuthServices {
   static CollectionReference userCollection =
       FirebaseFirestore.instance.collection("users");
   static DocumentReference? userDoc;
+  final dbref = FirebaseFirestore.instance.collection('users');
 
   static Future<String> SignUp(Users users) async {
     await Firebase.initializeApp();
@@ -29,6 +30,7 @@ class AuthServices {
       'isOn': '0',
       "createdAt": dateNow,
       "updatedAt": dateNow,
+      "role": users.role,
     }).then((value) {
       msg = "success";
     }).catchError((onError) {
@@ -54,7 +56,7 @@ class AuthServices {
 
     await userCollection.doc(uid).set({
       "isOn": "1",
-      "token" : token,
+      "token": token,
       "updatedAt": dateNow,
     }).then((value) {
       msg = "success";
@@ -73,7 +75,7 @@ class AuthServices {
     await auth.signOut().whenComplete(() {
       userCollection.doc(uid).update({
         'isOn': '0',
-        "token" : "-",
+        "token": "-",
         "updatedAt": dateNow,
       });
     });
