@@ -11,23 +11,22 @@ class _contactPsikologState extends State<contactPsikolog> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xffd09484),
         title: Text("SESI KONSULTASI"),
       ),
       body:Container(
-
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
-      floatingActionButton: AvatarGlow(
-
-        endRadius: 75,
-        glowColor: Theme.of(context).primaryColor,
-        child: FloatingActionButton(
-          child: Icon(Icons.add, size: 36),
-          onPressed:(){
-
-          },
+        child: Container(
+          alignment: Alignment.bottomCenter,
+          child: ElevatedButton(
+              onPressed: () {},
+              style: ElevatedButton.styleFrom(
+                primary: Color(0xffd09484),
+                onPrimary: Colors.white,
+              ),
+              child: Text('Pilih Psikolog')),
         ),
       ),
+
     );
   }
 }

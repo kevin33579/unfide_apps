@@ -1,7 +1,7 @@
 part of 'pages.dart';
 
 class PsikologMainMenu extends StatefulWidget {
-  static const String routeName = "/mainmenu";
+  static const String routeName = "/mainmenuPsikolog";
 
   @override
   _PsikologMainMenuState createState() => _PsikologMainMenuState();

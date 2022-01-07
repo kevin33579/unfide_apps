@@ -157,7 +157,10 @@ class _MyAccountState extends State<MyAccount> {
             ),
           ),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushReplacementNamed(
+                    context, UserEditProfile.routeName);
+              },
               style: ElevatedButton.styleFrom(
                 primary: Color(0xffd09484),
                 onPrimary: Colors.white,

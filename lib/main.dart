@@ -33,6 +33,7 @@ class MyApp extends StatelessWidget {
         Splash.routeName: (context) => Splash(),
         Login.routeName: (context) => Login(),
         MainMenu.routeName: (context) => MainMenu(),
+        PsikologMainMenu.routeName:(context) => PsikologMainMenu(),
         Register.routeName: (context) => Register(),
         ListCeritaPendidikan.routeName: (context) => ListCeritaPendidikan(),
         ListCeritaHoror.routeName: (context) => ListCeritaHoror(),
@@ -48,6 +49,13 @@ class MyApp extends StatelessWidget {
         PanduanPenggunaan.routeName: (context) => PanduanPenggunaan(),
         PusatBantuan.routeName: (context) => PusatBantuan(),
         SyaratDanKetentuan.routeName: (context) => SyaratDanKetentuan(),
+        UserEditProfile.routeName: (context) => UserEditProfile(),
+        ListCeritaPendidikanPsikolog.routeName: (context) => ListCeritaPendidikanPsikolog(),
+        ListCeritaHororPsikolog.routeName: (context) => ListCeritaHororPsikolog(),
+        ListCeritaCDLPsikolog.routeName: (context) =>
+            ListCeritaCDLPsikolog(),
+        ListCeritaKesehatanPsikolog.routeName: (context) => ListCeritaKesehatanPsikolog(),
+
       },
     );
   }

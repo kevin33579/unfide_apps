@@ -13,6 +13,8 @@ class _LoginState extends State<Login> {
   final ctrlPassword = TextEditingController();
   bool isVisible = true;
   bool isLoading = false;
+  final FirebaseAuth auth = FirebaseAuth.instance;
+  final FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -28,10 +30,12 @@ class _LoginState extends State<Login> {
         height: double.infinity,
         decoration: BoxDecoration(
             color: Color(0xfffff4f4),
-            image: DecorationImage(
-              image: AssetImage("assets/images/background.png"),
-              alignment: Alignment.bottomRight,
-            )),
+          image: DecorationImage(
+            image: AssetImage("assets/images/background.png"),
+            alignment: Alignment.bottomRight,
+          )
+        ),
+
         padding: EdgeInsets.all(24),
         child: Stack(
           children: [
@@ -112,8 +116,16 @@ class _LoginState extends State<Login> {
                                   });
                                   ActivityServices.showToast(
                                       "Login success", Colors.green);
-                                  Navigator.pushReplacementNamed(
-                                      context, MainMenu.routeName);
+                                  Navigator.pushReplacementNamed(context, PsikologMainMenu.routeName);
+                                  // final User user = auth.currentUser!;
+                                  // final docs = firestore.collection('users').doc(user.uid);
+                                  // if(docs.collection('role') == 'user'){
+                                  //   Navigator.pushReplacementNamed(context, MainMenu.routeName);
+                                  // }else if(docs.collection('role') == 'psikolog'){
+                                  //   Navigator.pushReplacementNamed(context, PsikologMainMenu.routeName);
+                                  // }
+
+
                                 } else {
                                   setState(() {
                                     isLoading = false;

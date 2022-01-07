@@ -17,7 +17,6 @@ class AuthServices {
     UserCredential userCredential = await auth.createUserWithEmailAndPassword(
         email: users.email, password: users.password);
     uid = userCredential.user!.uid;
-    //token = await userCredential.user.getIdToken();
     token = (await FirebaseMessaging.instance.getToken())!;
 
     await userCollection.doc(uid).set({
@@ -48,13 +47,18 @@ class AuthServices {
     String msg = "";
     String uid = "";
     String token = "";
+    // var roole = (await FirebaseFirestore.instance.collection('users').doc(uid).collection('role').doc().get()).data().toString();
+
 
     UserCredential userCredential =
         await auth.signInWithEmailAndPassword(email: email, password: password);
     uid = userCredential.user!.uid;
     token = (await FirebaseMessaging.instance.getToken())!;
 
-    await userCollection.doc(uid).set({
+
+
+    await userCollection.doc(uid).update({
+      // "role": roole,
       "isOn": "1",
       "token": token,
       "updatedAt": dateNow,
@@ -81,5 +85,14 @@ class AuthServices {
     });
 
     return true;
+  }
+
+  static Future UpdateUserList(String name,String phone) async{
+    String uid = auth.currentUser!.uid;
+    return await userCollection.doc(uid).update({
+      "name": name,
+      "phone": phone,
+      "uid": uid,
+    });
   }
 }
